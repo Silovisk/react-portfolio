@@ -1,9 +1,11 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import RedesSociais from "./RedesSociais"
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+
+import DigitarTexto from "./DigitarTexto.jsx";
 
 const Section = styled.div`
   height: 100vh;
@@ -77,17 +79,6 @@ const Desc = styled.p`
   }
 `;
 
-const Button = styled.button`
-  background-color: #da4ea2;
-  color: white;
-  font-weight: 500;
-  width: 100px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-`;
-
 const Right = styled.div`
   flex: 3;
   position: relative;
@@ -130,12 +121,13 @@ const Hero = () => {
           <Title>Silas Araujo</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>Full Stack Developer</Subtitle>
+            <Subtitle>
+              <DigitarTexto />
+            </Subtitle>
           </WhatWeDo>
           <Desc>
             Construindo Experiências Digitais Integradas Explorando o Melhor do Front-End e Back-End
           </Desc>
-          <Button>Contate me</Button>
           <RedesSociais />
         </Left>
         <Right>

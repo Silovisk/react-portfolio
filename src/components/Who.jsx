@@ -1,8 +1,5 @@
-import React, { Suspense } from "react";
+import React from "react";
 import styled from "styled-components";
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import Cube from "./Cube";
 
 const Section = styled.div`
   height: 100vh;
@@ -21,18 +18,30 @@ const Container = styled.div`
 
 const Left = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
 
   @media only screen and (max-width: 768px) {
-    display: none;
+    align-items: center;
+    text-align: center;
   }
 `;
 
 const Title = styled.h1`
+  justify-content: center;
   font-size: 74px;
 
   @media only screen and (max-width: 768px) {
     font-size: 60px;
   }
+`;
+
+const Center = styled.div`
+  flex: 1;
+  justify-content: center;
 `;
 
 const Right = styled.div`
@@ -77,33 +86,60 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
+const AboutMe = styled.p`
+  font-size: 24px;
+  color: #333;
+`;
+
+const MySkills = styled.div`
+  margin-top: 20px;
+`;
+
+const SkillTitle = styled.h3`
+  font-size: 20px;
+  color: #da4ea2;
+`;
+
+const SkillsList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+const SkillItem = styled.li`
+  font-size: 18px;
+  color: #666;
+`;
 
 const Who = () => {
   return (
     <Section>
       <Container>
         <Left>
-          <Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
-            <Suspense fallback={null}>
-              <ambientLight intensity={0.5} />
-              <directionalLight position={[3, 2, 1]} />
-              <Cube />
-              <OrbitControls enableZoom={false} autoRotate />
-            </Suspense>
-          </Canvas>
-        </Left>
-        <Right>
-          <Title>Think outside the square space</Title>
+          <Title>Sobre</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>Who we Are</Subtitle>
+            <Subtitle>Quem sou eu?</Subtitle>
           </WhatWeDo>
           <Desc>
-            a creative group of designers and developers with a passion for the
-            arts.
+            <AboutMe>
+              Eu sou um desenvolvedor web apaixonado por criar experiências
+              digitais incríveis. Minha jornada na programação começou há 2 
+              anos atrás, e desde então tenho trabalhado em
+              projetos desafiadores e empolgantes. Tenho experiência em
+            </AboutMe>
           </Desc>
-          <Button>See our works</Button>
-        </Right>
+        </Left>
+          <Right>
+          <MySkills>
+            <SkillTitle>Habilidades:</SkillTitle>
+            <SkillsList>
+              <SkillItem>Desenvolvimento Front-end</SkillItem>
+              <SkillItem>React.js</SkillItem>
+              <SkillItem>HTML5 & CSS3</SkillItem>
+              <SkillItem>[Adicione suas outras habilidades]</SkillItem>
+            </SkillsList>
+          </MySkills>
+          </Right>
       </Container>
     </Section>
   );

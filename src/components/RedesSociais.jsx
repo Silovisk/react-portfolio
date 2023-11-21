@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import ModalCv from "./ModalCv";
 
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+
 
 const Row = styled.div`
   display: flex;
@@ -17,13 +22,14 @@ const Icons = styled.div`
 const Icon = styled.div`
   font-size: 44px;
   cursor: pointer;
-  color: black;
+`;
+
+const Links = styled.a`
+  color: white;
   &:hover {
     color: #da4ea2;
   }
 `;
-
-const Link = styled
 
 const RedesSociais = () => {
   return (
@@ -31,14 +37,25 @@ const RedesSociais = () => {
       <Row>
         <Icons>
           <Icon>
-            <a target="blank" href="https://www.linkedin.com/in/silas-araujo-663772123/">
+            <Links
+              target="_blank"
+              href="https://www.linkedin.com/in/silas-araujo-663772123/"
+            >
               <FaLinkedin />
-            </a>
+            </Links>
           </Icon>
           <Icon>
-            <a href="https://github.com/Silovisk">
+            <Links target="_blank" href="https://github.com/Silovisk">
               <FaGithub />
-            </a>
+            </Links>
+          </Icon>
+          <Icon>
+            <Links target="_blank" href="https://www.instagram.com/silas_araujoou/">
+              <FaInstagram />
+            </Links>
+          </Icon>
+          <Icon>
+            <ModalCv />
           </Icon>
         </Icons>
       </Row>
