@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Section = styled.div`
   display: flex;
@@ -46,6 +47,15 @@ const List = styled.ul`
   }
 `;
 
+const StyledLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+  }
+`;
+
 const ListItem = styled.li`
   cursor: pointer;
   &:hover {
@@ -82,15 +92,15 @@ const Navbar = () => {
           <Logo src="./img/logo.png" />
           <List>
             <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
-            <ListItem>Contact</ListItem>
+            <ListItem><StyledLink href="#sobre">Sobre</StyledLink></ListItem>
+            {/* <ListItem>Projetos</ListItem> */}
+            <ListItem><StyledLink href="#contato">Contato</StyledLink></ListItem>
           </List>
         </Links>
         <Icons>
           {/* Changed the image due to copyright problems */}
-          <Icon src="./img/search.png" />
-          <Button>Hire Now</Button>
+          {/* <Icon src="./img/search.png" /> */}
+          <Button><StyledLink href="#contato">Contate</StyledLink></Button>
         </Icons>
       </Container>
     </Section>

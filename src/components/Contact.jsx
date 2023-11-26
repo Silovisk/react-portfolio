@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import Map from "./Map";
+import Swal from "sweetalert2";
 
 const Section = styled.div`
   height: 100vh;
@@ -82,38 +83,46 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_id",
-        "template_id",
+        "service_fuaw9zj",
+        "template_wlzwsmc",
         ref.current,
-        "public_key"
+        "H8z_uDvO23Z-3lP1S"
       )
       .then(
         (result) => {
-          console.log(result.text);
+          Swal.fire({
+            icon: "success",
+            title: "Mensagem enviada com sucesso!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          ref.current.reset();
           setSuccess(true);
         },
         (error) => {
-          console.log(error.text);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Algo deu errado, tente novamente mais tarde!",
+          });
           setSuccess(false);
         }
       );
   };
   return (
-    <Section>
+    <Section id="contato">
       <Container>
         <Left>
           <Form ref={ref} onSubmit={handleSubmit}>
-            <Title>Contact Us</Title>
+            <Title>Contate me</Title>
             <Input placeholder="Name" name="name" />
             <Input placeholder="Email" name="email" />
             <TextArea
-              placeholder="Write your message"
+              placeholder="Escreva sua mensagem aqui..."
               name="message"
               rows={10}
             />
-            <Button type="submit">Send</Button>
-            {success &&
-              "Your message has been sent. We'll get back to you soon :)"}
+            <Button type="submit">Enviar</Button>
           </Form>
         </Left>
         <Right>

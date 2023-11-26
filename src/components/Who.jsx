@@ -88,7 +88,7 @@ const Button = styled.button`
 `;
 const AboutMe = styled.p`
   font-size: 24px;
-  color: #333;
+  color: #ffffff;
 `;
 
 const MySkills = styled.div`
@@ -107,12 +107,16 @@ const SkillsList = styled.ul`
 
 const SkillItem = styled.li`
   font-size: 18px;
-  color: #666;
+  color: #ffffff;
 `;
 
 const Who = () => {
+  const startCareer = 2020;
+  const currentYear = new Date().getFullYear();
+  const yearsExperience = currentYear - startCareer;
+
   return (
-    <Section>
+    <Section id="sobre">
       <Container>
         <Left>
           <Title>Sobre</Title>
@@ -123,23 +127,42 @@ const Who = () => {
           <Desc>
             <AboutMe>
               Eu sou um desenvolvedor web apaixonado por criar experiências
-              digitais incríveis. Minha jornada na programação começou há 2 
-              anos atrás, e desde então tenho trabalhado em
-              projetos desafiadores e empolgantes. Tenho experiência em
+              digitais incríveis. Minha jornada na programação começou há{" "}
+              {yearsExperience} anos atrás, e desde então tenho trabalhado em
+              projetos desafiadores e empolgantes.
             </AboutMe>
           </Desc>
         </Left>
-          <Right>
+        <Right>
+          <Left>
+
           <MySkills>
-            <SkillTitle>Habilidades:</SkillTitle>
+            <SkillTitle>Habilidades Front-end:</SkillTitle>
             <SkillsList>
               <SkillItem>Desenvolvimento Front-end</SkillItem>
               <SkillItem>React.js</SkillItem>
+              <SkillItem>Javascrip (jQuery)</SkillItem>
               <SkillItem>HTML5 & CSS3</SkillItem>
-              <SkillItem>[Adicione suas outras habilidades]</SkillItem>
+              <SkillItem>Bootstrap</SkillItem>
             </SkillsList>
           </MySkills>
-          </Right>
+          <MySkills>
+            <SkillTitle>Habilidades Back-end:</SkillTitle>
+            <SkillsList>
+              <SkillItem>PHP/Laravel</SkillItem>
+              <SkillItem>Python/Django</SkillItem>
+              <SkillItem>MySql/Oracle db/Sql Server</SkillItem>
+            </SkillsList>
+          </MySkills>
+          <MySkills>
+            <SkillTitle>Outras Habilidades</SkillTitle>
+            <SkillsList>
+              <SkillItem>Git/Github</SkillItem>
+              <SkillItem>Excel</SkillItem>
+            </SkillsList>
+          </MySkills>
+          </Left>
+        </Right>
       </Container>
     </Section>
   );
