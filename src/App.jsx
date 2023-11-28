@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Who from "./components/Who";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom"; // Mudança para HashRouter
 
 const Container = styled.div`
   height: 100vh;
