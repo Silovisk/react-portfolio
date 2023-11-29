@@ -141,7 +141,7 @@ const Who = () => {
             <SkillsList>
               <SkillItem>Desenvolvimento Front-end</SkillItem>
               <SkillItem>React.js</SkillItem>
-              <SkillItem>Javascrip (jQuery)</SkillItem>
+              <SkillItem>Javascript (jQuery)</SkillItem>
               <SkillItem>HTML5 & CSS3</SkillItem>
               <SkillItem>Bootstrap</SkillItem>
             </SkillsList>
